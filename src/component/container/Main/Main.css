@@ -1,3 +1,6 @@
 .main{
-    min-height: 60rem;
+    min-height: 48rem;
 }
+.do-filter {
+    filter: opacity(.4);
+  }

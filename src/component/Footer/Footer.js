@@ -2,7 +2,7 @@
 
 const Footer = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light body ">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light p-5">
             <ul className="navbar-nav  mt-2 mt-lg-0">
                 <li className="nav-item active">
                     <a className="nav-link" href="#"  >خانه <span className="sr-only">(current)</span></a>
