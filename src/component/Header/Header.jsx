@@ -1,9 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+
+
 import './Header.css';
 
 
 const Header = () => {
     return (
+       
         <nav className="navbar navbar-expand-lg navbar-light bg-light body ">
             
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" >
@@ -14,19 +19,22 @@ const Header = () => {
                 
                 <ul className="navbar-nav  mt-2 mt-lg-0">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#"  >خانه <span className="sr-only">(current)</span></a>
+                        <Link className="nav-link" to="/"  >خانه <span className="sr-only">(current)</span></Link>
+                        
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#" >خدمات</a>
+                        <Link className="nav-link" to="/services" >خدمات</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link " href="#" >درباره ما </a>
+                        <Link className="nav-link " to="/aboutus" >درباره ما </Link>
                     </li>
                 </ul>
 
             </div>
-            <a className="navbar-brand " href="#" >ورود / ثبت نام</a>
+            <Link className="navbar-brand " to="/login" >ورود / ثبت نام</Link>
         </nav>
+       
+
     );
 }
 
