@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState,useEffect} from "react";
 import {
   BrowserRouter as Router,
   Route,
 } from "react-router-dom";
 import './App.css';
+import axios from "./Api/api";
 import Header from './component/Header/Header';
 import Wrapper from './Wrapper';
 import Main from './component/container/Main/Main';
@@ -12,8 +13,32 @@ import Login from './component/Login/Login'
 import AboutUs from "./component/AboutUs/AboutUs";
 import Services from "./component/Services/Services";
 import Register from "./component/Register/Register";
+import {getUser , removeUserSession ,getToken ,setUserSession} from "./functions/common";
 
 function App() {
+  const [user,setUser] = useState("");
+  let userAccept = getUser();
+
+  useEffect(() => {
+    const token = getToken();
+    if (!token) {
+      return;
+    }
+ 
+    axios.get(`/verifyToken?token=${token}`).then(response => {
+      setUserSession(response.data.token, response.data.user);
+      
+    }).catch(error => {
+      removeUserSession();
+      
+    });
+  }, []);
+ 
+  // handle click event of logout button
+  const handleLogout = () => {
+    removeUserSession();
+    
+  }
 
   return (
     <Wrapper>

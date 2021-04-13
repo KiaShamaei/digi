@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import AuthContext from "../../context/auth-context";
+import {setUserSession, setTest} from "../../functions/common";
 import "./Login.css";
-import axios from "../../Api/api"
+import axios from "../../Api/api";
 
 
 export default function Login() {
     const [mobile, setMobile] = useState("");
+    const [loading, setLoading] = useState(false);
     const [password, setPassword] = useState("");
     const [auth,setAuth] = useState("");
     
@@ -20,8 +21,8 @@ export default function Login() {
     function handleLogin(event) {
       event.preventDefault();
       axios.get(`http://localhost:8080/loginuser?mobileNumber=${mobile}&password=${password}`)
-      .then(function (response) {
-        localStorage.setItem("userInfo",response.data)
+      .then( (response)=> {
+        setTest("name",JSON.stringify(response.data.Family))
       })
 
   }
@@ -29,10 +30,7 @@ export default function Login() {
 
     return (
         <div className="Login">
-            <AuthContext.Provider
-            value={{auth:auth 
-            }}
-            >
+          
             <Form onSubmit={handleLogin}>
             <h3 className="my-5">ورود</h3>
                 <Form.Group size="lg" controlId="email">
@@ -60,7 +58,7 @@ export default function Login() {
                 </Button>
                 <p className="mt-2 text-muted"> <Link to="/register"> ثبت نام ،</Link>فراموشی رمز </p>
             </Form>
-            </AuthContext.Provider>
+           
         </div>
     );
 }
