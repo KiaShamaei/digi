@@ -1,5 +1,6 @@
-import React from 'react';
+import React , {useContext}from 'react';
 import { Link } from 'react-router-dom';
+import AuthContext from "../../context/auth-context";
 
 
 
@@ -7,6 +8,7 @@ import './Header.css';
 
 
 const Header = () => {
+    const authContext = useContext(AuthContext);
     return (
        
         <nav className="navbar navbar-expand-lg navbar-light bg-light body ">
@@ -31,7 +33,11 @@ const Header = () => {
                 </ul>
 
             </div>
-            <Link className="navbar-brand " to="/login" >ورود / ثبت نام</Link>
+            
+           
+             <Link className="navbar-brand " to="/login" >{authContext.auth ?"خوش آمدید" : "ورود / ثبت نام "}</Link>
+            
+           
         </nav>
        
 

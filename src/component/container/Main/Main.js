@@ -13,7 +13,7 @@ const Main = () => {
         <div className="main container">
             <div className="row">
                 <div className="col-12 mt-5 text-center">
-                    <h2 className=" text-success display-3 "> هلثی <h2 className="   text-primary d-inline display-3">استایل</h2></h2>
+                    <h2 className=" text-success display-3 "> هلثی </h2> <h2 className="   text-primary d-inline display-3">استایل</h2>
                     <p className="text-bold"> دراینجا شما می توانید به روشهای مختلف به خدمات با کیفیت دسترسی پیدا کنید </p>
                     <button className="btn btn-success mt-5 t">همین امروز شروع کنید </button>
                     <h2 className="mt-5 text-muted">چرا هلثی استایل ؟</h2>
