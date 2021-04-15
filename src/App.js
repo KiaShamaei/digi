@@ -12,6 +12,7 @@ import Footer from './component/Footer/Footer';
 import Login from './component/Login/Login'
 import AboutUs from "./component/AboutUs/AboutUs";
 import Services from "./component/Services/Services";
+import AboutMe from './component/AboutMe/AboutMe';
 import Register from "./component/Register/Register";
 import {getUser , removeUserSession ,getToken ,setUserSession} from "./functions/common";
 
@@ -19,20 +20,7 @@ function App() {
   const [user,setUser] = useState("");
   let userAccept = getUser();
 
-  useEffect(() => {
-    const token = getToken();
-    if (!token) {
-      return;
-    }
- 
-    axios.get(`/verifyToken?token=${token}`).then(response => {
-      setUserSession(response.data.token, response.data.user);
-      
-    }).catch(error => {
-      removeUserSession();
-      
-    });
-  }, []);
+;
  
   // handle click event of logout button
   const handleLogout = () => {
@@ -46,6 +34,7 @@ function App() {
         <Header />
         <Route path="/login" component={Login}  />
         <Route path="/aboutus" component={AboutUs} exact />
+        <Route path="/aboutme" component={AboutMe} exact />
         <Route path="/services" component={Services} exact />
         <Route path="/register" component={Register} exact />
         <Route path="/" component={Main} exact />

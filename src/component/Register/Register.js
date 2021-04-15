@@ -5,7 +5,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { ValidateEmail, IsIranPhone, IsPassword } from '../../functions/validations';
 import "./Register.css"
-import api from '../../Api/api';
+// import url from '../../Api/api';
+import axios from '../../Api/api';
+//import axios from 'axios';
 
 const Register = () => {
     const [firstName, setFirstName] = useState("");
@@ -39,16 +41,17 @@ const Register = () => {
             email: emailAddress,
             password: password,
             createDate: "0001-01-01T00:00:00",
-            isActive: true,
+            isActive: "true",
             userTypeId: 1
 
 
         }
-
-        // console.log(users)
-        api.post("/adduser", users)
+   
+      const d=JSON.stringify(users);
+      console.log(d);
+        axios.post("adduser",users)
             .then(res => {
-                debugger;
+               console.log(res)
                 if (res.status == 200) {
                     if (res.data == "Success") {
                         setInsert("ثبت نام با موفقیت انجام شد.")

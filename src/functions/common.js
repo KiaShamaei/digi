@@ -1,7 +1,13 @@
 // return the user data from the session storage
 export const getUser = () => {
-    const userStr = sessionStorage.getItem('user');
-    if (userStr) return JSON.parse(userStr);
+    const response = {};
+    if (sessionStorage.getItem('user')) 
+    {
+      response.userInfo = JSON.parse(sessionStorage.getItem('user'));
+      response.isValid = true ;
+      return response ;
+    }
+
     else return null;
   }
    
