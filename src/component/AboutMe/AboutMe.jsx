@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import axios from "../../Api/api";
-import { getUser, getToken } from "../../functions/common";
+import { getUser } from "../../functions/common";
+import NotAutorized from '../Error/NotAuthorized';
+
 
 
 const AboutMe = () => {
 
     let [users, setUsers] = useState([]);
     useEffect(() => {
-      
-        axios.post("userinfo",getUser())
-        .then(res => setUsers(res.data.name))
 
-        
+        axios.post("userinfo", getUser())
+            .then(res => setUsers(res.data.name))
+
+
     }, [])
+
+
     return (
-
-        <h1>{users}
-
-        </h1>
-
+       
+            <NotAutorized address={(users.length !== 0) ? "/admin" : "/login"} />
+        
     );
 }
 

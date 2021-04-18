@@ -1,0 +1,10 @@
+.main{
+    min-height: 48rem;
+}
+
+.body {
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    font-family: 'IRANSans';
+  }

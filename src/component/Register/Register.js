@@ -52,12 +52,12 @@ const Register = () => {
         axios.post("adduser",users)
             .then(res => {
                console.log(res)
-                if (res.status == 200) {
-                    if (res.data == "Success") {
+                if (res.status === 200) {
+                    if (res.data === "Success") {
                         setInsert("ثبت نام با موفقیت انجام شد.")
                         handleShow();
                         
-                    } else if (res.data == "Failed") {
+                    } else if (res.data === "Failed") {
                         setInsert("خطا در ثبت اطلاعات ");
                         handleShow();
                     } else {

@@ -26,7 +26,7 @@ export default function Login() {
           debugger;
         //setTest("name",JSON.stringify(response.data.Family))
         setUserSession(response.data.token,response.data.userInfo);
-        history.push('/');
+        history.push('/admin');
 
         
       })
