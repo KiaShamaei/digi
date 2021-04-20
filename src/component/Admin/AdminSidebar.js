@@ -12,7 +12,7 @@ import { NavLink , Link} from 'react-router-dom';
 const AdminSidebar = () => {
   return (
     <div
-      style={{ display: 'flex', height: '100vh', overflow: 'scroll initial', direction:'rtl', textAlign:'right' }}
+      style={{ display: 'flex', height: '80vh', overflow: 'scroll initial', direction:'rtl', textAlign:'right' }}
     >
       <CDBSidebar textColor="#333" backgroundColor="#fafafa">
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
@@ -42,7 +42,7 @@ const AdminSidebar = () => {
               </CDBSidebarMenuItem>
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               exact
               to="/hero404"
               target="_blank"
@@ -51,7 +51,7 @@ const AdminSidebar = () => {
               <CDBSidebarMenuItem icon="exclamation-circle">
                 404 page
               </CDBSidebarMenuItem>
-            </NavLink>
+            </NavLink> */}
           </CDBSidebarMenu>
         </CDBSidebarContent>
 

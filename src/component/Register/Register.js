@@ -42,7 +42,10 @@ const Register = () => {
             password: password,
             createDate: "0001-01-01T00:00:00",
             isActive: "true",
-            userTypeId: 1
+            userTypeId: 1,
+            bio:"",
+            Gender:"",
+            imageUrl:""
 
 
         }
