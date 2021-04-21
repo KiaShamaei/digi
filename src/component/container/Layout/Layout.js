@@ -8,10 +8,10 @@ import './Layout.css';
 const Layout =(props)=>{
     return (
         <Wrapper>
-            <main className="content">
+            
                 <Shopping />
 
-            </main>
+            
         </Wrapper>
     )
 }

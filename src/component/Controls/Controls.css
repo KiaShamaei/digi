@@ -12,3 +12,8 @@
     box-shadow: 0 0 25px 5px  rgba(146, 142, 142, 0.07);
 
 }
+.price p {
+    color : #6a1b9a;
+    font-weight: blod;
+    font-size: 1.2rem;
+}

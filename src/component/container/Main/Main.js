@@ -6,6 +6,7 @@ import timer from '../../../assets/timer.svg';
 import cup from '../../../assets/Cup.svg';
 import './Main.css'
 import MainFold2 from '../../MainFold2/MainFold2'
+import ModalIn from '../../shared/Modal/Modal';
 
 const Main = () => {
     return (
@@ -38,6 +39,7 @@ const Main = () => {
             </div>
         </div>
         <MainFold2/>
+      
         
         </>
         );
